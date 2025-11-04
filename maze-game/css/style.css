@@ -1,0 +1,33 @@
+/*
+ * Misc CSS styling for consent form and jsPsych questionnaires.
+ *
+ */
+
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+ body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+ span.property-name {
+  font-size: 24px;
+ }
+
+ li.title {
+  font-size: 28px;
+ }
