@@ -14,7 +14,7 @@ export class startScene extends Phaser.Scene
         this.load.tilemapTiledJSON('map', './maze-game/assets/maze-7x7.json');
         // load all imgs that we need
         this.load.image('mapPack_spritesheet', './maze-game/assets/map-v4/Spritesheet/mapPack_spritesheet.png');
-        this.load.image('home', './maze-game/assets/home.png');
+        this.load.image('home', './maze-game/assets/maze1.png');
     }
 
     create()
@@ -29,10 +29,10 @@ export class startScene extends Phaser.Scene
 
         var dialog = this.rexUI.add.dialog({
             x: width/2,
-            y: height*3.8/5,
+            y: height*0.82,
 
             actions: [
-                createLabel(this, '进入游戏', () =>{
+                createLabel(this, 'Enter Game', () =>{
                     this.nextScene();
                 })
             ],

@@ -412,9 +412,9 @@ export class maze5x5 extends Phaser.Scene
 
 var displayInfoPanel = function(scene) {
     var mainTxt = (
-        "关卡 1-" + (trial+1)
+        "Practice 1-" + (trial+1)
     );
-    var buttonTxt = '开始';
+    var buttonTxt = 'start';
 
     new createInstrPanel (scene, width, height, mainTxt, buttonTxt)
 
@@ -462,7 +462,7 @@ var trialStart = function(scene) {
         callbackScope: scene,
         loop: true,
     });
-    timeText = scene.add.text(50, 50, "观察时间：5", {
+    timeText = scene.add.text(50, 50, "Time left：5", {
             fontSize: 40/1.31 +'px',
             fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
             fill: "#FFD700",
@@ -517,7 +517,7 @@ var createDialog = function (scene, width, height, mainTxt, buttonTxt) {
             fontSize: 60,
             // wordWrap: { width: 280 },
             fontFamily: '"Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
-            lineSpacing: 13, // 设置行间距
+            lineSpacing: 13,
             align: 'center',
             }
         ),
@@ -572,7 +572,7 @@ var createLabel = function (scene, text) {
 
 var onTimerTick = function() {
     remainingTime--
-    timeText.setText('观察时间：' + remainingTime);
+    timeText.setText('Time left：' + remainingTime);
 
     if (remainingTime == 0) {
         this.timer.remove(false);
@@ -582,7 +582,7 @@ var onTimerTick = function() {
 
 var getRandomCoordinates = function (array, num) {
     const result = [];
-    const tempArray = array.slice(); // 复制一份坐标数组，以免修改原始数组
+    const tempArray = array.slice(); // Copy a coordinate array to avoid modifying the original array
     for (let i = 0; i < num; i++) {
         const randomIndex = Math.floor(Math.random() * tempArray.length);
         const selectedCoordinate = tempArray.splice(randomIndex, 1)[0];

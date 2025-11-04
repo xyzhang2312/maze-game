@@ -30,34 +30,28 @@ export class instructScene extends Phaser.Scene
         const { width, height } = this.sys.game.config;
 
         ///////////////////PAGE ONE////////////////////
-        var titleTxt = '  欢迎参加游戏！';
+        var titleTxt = ' Welcome to the game!';
         var mainTxt = (
-            // "在这个游戏中，你将在迷宫中\n"+
-            // "探索并寻找宝物。\n\n"+
-            // "在每轮游戏开始时，将会给你呈现迷\n"+
-            // "宫的布局（5秒），接着迷宫消失，随\n"+
-            // "即显示你的位置和宝物 [img=star] 的位置，你\n"+
-            // "的任务是 [b]规划一条最短路径[/b] 去收集 [img=star]。"
-            "在这个游戏中，你将在迷宫中\n"+
-            "探索并寻找宝物。\n\n"+
-            "在每轮游戏开始时，将会给你呈现迷\n"+
-            "宫的布局（5秒），接着迷宫消失，随\n"+
-            "即显示你的位置和星星的位置，你的\n"+
-            "任务是规划一条最短路径去收集星星。"
+            "In this game, you will explore \n"+
+            "the maze and collect stars.\n\n"+
+            "At each round, you will see the layout of\n"+
+            "the maze (5 seconds), then it disapears.\n\n"+
+            "You will have to take the shortest\n"+
+            "path to collect the star. "
         );
-        var buttonTxt = '下一页';
+        var buttonTxt = 'next page';
         var pageNo = 1;
         new createInstrPanel(this, width, height, pageNo, titleTxt, mainTxt, buttonTxt)
 
         ///////////////////PAGE TWO////////////////////
         eventsCenter.once('page1complete', function () {
         mainTxt = (
-            "接下来，让我们先来做5个小练习\n"+
-            "来熟悉游戏规则。如果你准备\n"+
-            "好了，请点击 开始游戏 按钮！"
+            "Before you start the real game, you\n"+
+            "will have a chance to practice.\n\n"+
+            "When you are ready, press start to begin!"
         );
         pageNo = 2;
-        var buttonTxt = '开始游戏';
+        var buttonTxt = 'start practice';
         createInstrPanel(this, width, height, pageNo, titleTxt, mainTxt, buttonTxt)
         }, this);
 
@@ -117,7 +111,7 @@ var createDialog = function (scene, width, height, pageNo, titleTxt, mainTxt, bu
             fontSize: 48,
             // wordWrap: { width: 280 },
             fontFamily: '"Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
-            lineSpacing: 13, // 设置行间距
+            lineSpacing: 13,
             align: 'center',
             }
         ),
